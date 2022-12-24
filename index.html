@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map and Set</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1> JS HANDSON</h1>
+    <H2>Map and Set</H2>
+    <hr>
+    <p class="ques"><span class="red">Qn 1. You are given a string (STR) of length N, consisting of only the lower case English alphabet.
+        Your task is to remove all the duplicate occurrences of characters in the string.
+        <br>
+        &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;Input:
+        abcadeecfb <br>
+        &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;Output:
+        abcdef</span>
+        <p class="ans"><span class="green">Ans - </span>
+        <pre>
+            let a="abcadeecfb";
+            let split=a.split("");
+            let set=new Set();
+            for(let i=0;i< split.length;i++){
+              set.add(split[i]);
+            }
+            console.log(...set);
+        </pre></p>
+
+        <p class="ques"><span class="red">Qn 2. "Problem:
+            You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)
+            <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;Input:
+            abcadeecfb
+            <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; Output: <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; a=2 <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; b=2 <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; c=2 <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; d=1 <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; e=2 <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; f=1</span>
+            <p class="ans"><span class="green">Ans - </span>
+            <pre>
+                let a="abcadeecfb";
+                let uniquechar=new Map();
+                for(let i=0;i< a.length;i++){
+                  if(uniquechar.has(a[i])){
+                    let value=uniquechar.get(a[i]);
+                    uniquechar.set(a[i],value+1);
+                    
+                  }
+                  else{
+                    uniquechar.set(a[i],1);
+                    }
+                }
+                for(let [k,v] of uniquechar){
+                  console.log(k+"="+ v);
+                }
+            </pre></p>
+
+</body>
+</html>
